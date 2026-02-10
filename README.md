@@ -63,19 +63,19 @@ snakemake --use-conda --use-apptainer --cores <number_of_cores>
 
 These parameters **must** be configured before running the pipeline:
 
-| Parameter                           | Description                                                                                                                                                                                                            | Example                                          |
-| :---------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------- |
-| `sample_id`                         | Unique identifier for your sample                                                                                                                                                                                      | `"SRR187"`                                       |
-| `technology`                        | Sequencing technology: `"pb_iso_seq"`, `"pb_mas_seq"`, `"ont_r9_cdna"`, or `"ont_r9_drna"`                                                                                                                             | `"pb_iso_seq"`                                   |
-| `rna_data_path`                     | Path to long-read RNA-seq data (BAM or FASTQ file)                                                                                                                                                                     | `"/data/rna/sample.fastq.gz"`                    |
-| `ms_data_path`                      | List of paths to mzML files (one or more)                                                                                                                                                                              | `["/data/ms/file1.mzML", "/data/ms/file2.mzML"]` |
-| `genome_path`                       | Full path to reference genome FASTA file                                                                                                                                                                               | `"/data/refs/genome.fna"`                        |
-| `transcriptome_path`                | Full path to reference transcriptome GTF file                                                                                                                                                                          | `"/data/refs/transcriptome.gtf"`                 |
-| `contaminants_path`                 | Full path to contaminants FASTA file (e.g., cRAP database)                                                                                                                                                             | `"/data/refs/crap.fasta"`                        |
-| `search_mass_spec_sage_config_path` | Path to sage configuration JSON file. This file **must** be configured before running. Please refer to the [sage documentation](https://sage-docs.vercel.app/docs/configuration#file) for guidance on the sage config. | `"config/sage_config.json"`                      |
-| `search_mass_spec_ms_enzyme`        | Protease enzyme name (e.g., `"Trypsin"`). **Must match** the enzyme setting in your SAGE config file.                                                                                                                  | `"Trypsin"`                                      |
-| `search_mass_spec_ms_cleavage_position` | Cleavage position (`"c"` for C-terminal). **Must match** the cleavage position in your SAGE config file.                                                                                                                | `"c"`                                           |
-| `search_mass_spec_ms_max_missed_cleavages` | Maximum allowed missed cleavages. **Must match** the max missed cleavages setting in your SAGE config file.                                                                                                            | `2`                                             |
+| Parameter                                  | Description                                                                                                                                                                                                            | Example                                          |
+| :----------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------- |
+| `sample_id`                                | Unique identifier for your sample                                                                                                                                                                                      | `"SRR187"`                                       |
+| `technology`                               | Sequencing technology: `"pb_iso_seq"`, `"pb_mas_seq"`, `"ont_r9_cdna"`, or `"ont_r9_drna"`                                                                                                                             | `"pb_iso_seq"`                                   |
+| `rna_data_path`                            | Path to long-read RNA-seq data (BAM or FASTQ file)                                                                                                                                                                     | `"/data/rna/sample.fastq.gz"`                    |
+| `ms_data_path`                             | List of paths to mzML files (one or more)                                                                                                                                                                              | `["/data/ms/file1.mzML", "/data/ms/file2.mzML"]` |
+| `genome_path`                              | Full path to reference genome FASTA file                                                                                                                                                                               | `"/data/refs/genome.fna"`                        |
+| `transcriptome_path`                       | Full path to reference transcriptome GTF file                                                                                                                                                                          | `"/data/refs/transcriptome.gtf"`                 |
+| `contaminants_path`                        | Full path to contaminants FASTA file (e.g., cRAP database)                                                                                                                                                             | `"/data/refs/crap.fasta"`                        |
+| `search_mass_spec_sage_config_path`        | Path to sage configuration JSON file. This file **must** be configured before running. Please refer to the [sage documentation](https://sage-docs.vercel.app/docs/configuration#file) for guidance on the sage config. | `"config/sage_config.json"`                      |
+| `search_mass_spec_ms_enzyme`               | Protease enzyme name (e.g., `"Trypsin"`). **Must match** the enzyme setting in your SAGE config file.                                                                                                                  | `"Trypsin"`                                      |
+| `search_mass_spec_ms_cleavage_position`    | Cleavage position (`"c"` for C-terminal). **Must match** the cleavage position in your SAGE config file.                                                                                                               | `"c"`                                            |
+| `search_mass_spec_ms_max_missed_cleavages` | Maximum allowed missed cleavages. **Must match** the max missed cleavages setting in your SAGE config file.                                                                                                            | `2`                                              |
 
 ### Optional configuration
 
@@ -91,7 +91,7 @@ These parameters have sensible defaults and can typically be left unchanged:
 
 ### Software version configuration
 
-These parameters are defined in `config/pipeline_config.yaml` and control which tool versions the pipeline expects. 
+These parameters are defined in `config/pipeline_config.yaml` and control which tool versions the pipeline expects.
 
 **Note:** The Bambu version is pinned in the `workflow/envs/r/bambu.yaml` conda environment file, so it must be changed directly there.
 
@@ -124,12 +124,12 @@ These parameters are defined in `config/pipeline_config.yaml` and control which 
 
 ### MS search configuration
 
-| Parameter                                      | Description                     | Default     |
-| ---------------------------------------------- | ------------------------------- | ----------- |
-| `search_mass_spec_ms_decoy_min_peptide_length` | Minimum decoy peptide length    | `5`         |
-| `search_mass_spec_ms_decoy_max_peptide_length` | Maximum decoy peptide length            | `100`       |
-| `search_mass_spec_ms_decoy_max_iterations`     | Maximum iterations for decoy generation | `100`       |
-| `search_mass_spec_fdr`                         | False discovery rate threshold          | `0.01`      |
+| Parameter                                      | Description                             | Default |
+| ---------------------------------------------- | --------------------------------------- | ------- |
+| `search_mass_spec_ms_decoy_min_peptide_length` | Minimum decoy peptide length            | `5`     |
+| `search_mass_spec_ms_decoy_max_peptide_length` | Maximum decoy peptide length            | `100`   |
+| `search_mass_spec_ms_decoy_max_iterations`     | Maximum iterations for decoy generation | `100`   |
+| `search_mass_spec_fdr`                         | False discovery rate threshold          | `0.01`  |
 
 #### Annotation configuration
 
@@ -144,8 +144,6 @@ We first download the repo and get appropriate reference files:
 ```bash
 git clone https://github.com/dnwissel/lr-haplotype-proteomics-pipe
 cd lr-haplotype-proteomics-pipe
-mkdir references
-mkdir data
 
 cd references
 wget ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.15_GRCh38/seqs_for_alignment_pipelines.ucsc_ids/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz
@@ -159,7 +157,7 @@ wget --content-disposition "https://zenodo.org/records/18588655/files/SRR187_sub
 wget --content-disposition "https://zenodo.org/records/18588655/files/210728_WTC11Blue1_Tryp4,6_HCDorbi_4hr_B4_20210801032622.mzML?download=1"
 ```
 
-Then, we configure `config/required_config.yaml` appropriately:
+Then, we configure `config/required_config.yaml` and `config/sage_config.yaml` appropriately for our data:
 
 ```yaml
 sample_id: "SRR187"
@@ -167,9 +165,7 @@ technology: "pb_iso_seq"
 
 rna_data_path: "data/SRR187_subsampled.fastq.gz"
 ms_data_path:
-  [
-    "data/210728_WTC11Blue1_Tryp4,6_HCDorbi_4hr_B4_20210801032622.mzML",
-  ]
+  ["data/210728_WTC11Blue1_Tryp4,6_HCDorbi_4hr_B4_20210801032622.mzML"]
 
 genome_path: "references/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna"
 transcriptome_path: "references/gencode.v49.primary_assembly.annotation.gtf"
@@ -181,12 +177,67 @@ search_mass_spec_ms_cleavage_position: "c"
 search_mass_spec_ms_max_missed_cleavages: 2
 ```
 
+```yaml
+{
+  "database":
+    {
+      "bucket_size": 32768,
+      "enzyme":
+        {
+          "missed_cleavages": 2,
+          "min_len": 5,
+          "max_len": 100,
+          "cleave_at": "KR",
+          "restrict": "P",
+          "c_terminal": true,
+        },
+      "fragment_min_mz": 150.0,
+      "fragment_max_mz": 2000.0,
+      "peptide_min_mass": 500.0,
+      "peptide_max_mass": 5000.0,
+      "static_mods": { "C": 57.0215 },
+      "variable_mods": { "M": [15.9949] },
+      "max_variable_mods": 2,
+      "decoy_tag": "decoy_",
+      "generate_decoys": false,
+    },
+  "precursor_tol": { "ppm": [-10, 10] },
+  "fragment_tol": { "ppm": [-10, 10] },
+  "precursor_charge": [2, 4],
+  "predict_rt": true,
+  "min_peaks": 15,
+  "max_peaks": 500,
+  "min_matched_peaks": 4,
+  "report_psms": 1,
+}
+```
+
 Lastly, since we are only searching a small amount of MS data, let's set the FDR in `config/optional_config.yaml` to a larger number to ensure we get some outputs:
 
 ```yaml
-search_mass_spec_fdr: 0.2
-```
+parallel_threads: 12
+align_sort_bam_memory_gb: 4
+align_sort_bam_threads: 4
 
+call_orfs_orfanage_mode: "BEST"
+call_orfs_minimum_orf_length_nt: 100
+
+call_variants_min_qual: 0
+call_variants_snp_min_af: 0.08
+call_variants_indel_min_af: 0.15
+call_variants_min_coverage: 3
+call_variants_min_mq: 5
+call_variants_keep_indels: "true"
+call_variants_min_gq: 10
+
+search_mass_spec_ms_decoy_min_peptide_length: 5
+search_mass_spec_ms_decoy_max_peptide_length: 100
+search_mass_spec_ms_decoy_max_iterations: 100
+# MAKE CHANGE HERE
+search_mass_spec_fdr: 0.2
+
+annotate_map_peptides_sjdbOverhang: 100
+```
 
 Then we run:
 
@@ -257,6 +308,7 @@ BAM files containing peptide sequence alignments to the reference genome for eac
 BAM files containing isoform sequence alignments to the reference genome for each haplotype (`homo` for isoforms only containing homozygous variants, `first`, `second` for heterozygous, respectively). We note that for alignment, isoform sequences were back-translated to genomic sequences, with silent variants ignored.
 
 ## Limitations
+
 Currently, we do not sure ensure that two A haplotypes (e.g., `ENST123A` and `ENST124A` necessarily inherit the same variants, i.e., it is possible that while they share a variant, the `A` notation does not ensure this in all cases).
 
 ## Citation
