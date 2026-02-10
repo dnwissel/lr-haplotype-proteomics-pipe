@@ -1,0 +1,19 @@
+name: base
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - r-base=4.4.1
+  - bioconductor-variantannotation=1.52.0
+  - bioconductor-rtracklayer=1.66.0
+  - bioconductor-biostrings
+  - r-stringr
+  - r-rjson
+  - r-readr=2.1.5
+  - r-dplyr=1.1.4
+  - r-sfsmisc=1.1
+  - r-jsonlite
+  - r-renv=1.0.10
+  - r-vroom=1.6.5
+  - r-biocmanager=1.30.25

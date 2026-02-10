@@ -1,0 +1,17 @@
+sample_id: "SRR187"
+technology: "pb_iso_seq"
+
+rna_data_path: "data/SRR187_subsampled.fastq.gz"
+ms_data_path:
+  [
+    "data/210728_WTC11Blue1_Tryp4,6_HCDorbi_4hr_B4_20210801032622.mzML",
+  ]
+
+genome_path: "references/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna"
+transcriptome_path: "references/gencode.v49.primary_assembly.annotation.gtf"
+contaminants_path: "references/crap.fasta"
+
+search_mass_spec_sage_config_path: "config/sage_config.json"
+search_mass_spec_ms_enzyme: "Trypsin"
+search_mass_spec_ms_cleavage_position: "c"
+search_mass_spec_ms_max_missed_cleavages: 2

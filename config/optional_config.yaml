@@ -1,0 +1,21 @@
+parallel_threads: 12
+align_sort_bam_memory_gb: 4
+align_sort_bam_threads: 4
+
+call_orfs_orfanage_mode: "BEST"
+call_orfs_minimum_orf_length_nt: 100
+
+call_variants_min_qual: 0
+call_variants_snp_min_af: 0.08
+call_variants_indel_min_af: 0.15
+call_variants_min_coverage: 3
+call_variants_min_mq: 5
+call_variants_keep_indels: "true"
+call_variants_min_gq: 10
+
+search_mass_spec_ms_decoy_min_peptide_length: 5
+search_mass_spec_ms_decoy_max_peptide_length: 100
+search_mass_spec_ms_decoy_max_iterations: 100
+search_mass_spec_fdr: 0.01
+
+annotate_map_peptides_sjdbOverhang: 100

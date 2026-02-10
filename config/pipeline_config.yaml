@@ -1,0 +1,13 @@
+snakemake_min_version: "8.2.0"
+mambaforge_version: "24.7.1-2"
+seed: 42
+
+transmogr_version: "1.6.0"
+rcppgreedysetcover_version: "0.1.0"
+clair3_rna_version: "v0.2.2"
+
+call_variants_clair3_rna_mapping:
+  pb_iso_seq: "hifi_sequel2_minimap2"
+  pb_mas_seq: "hifi_mas"
+  ont_r9_cdna: "ont_r9_guppy_cdna"
+  ont_r9_drna: "ont_r9_guppy_drna"

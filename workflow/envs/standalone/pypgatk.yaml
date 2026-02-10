@@ -1,0 +1,9 @@
+name: pypgatk
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - pyopenms=2.7.0
+  - pypgatk=0.0.24
+  - pandas=1.4.0

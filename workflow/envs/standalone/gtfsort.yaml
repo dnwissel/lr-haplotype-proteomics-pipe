@@ -1,0 +1,9 @@
+name: gtfsort
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - gff3sort=0.1.a1a2bc9
+  - gffread=0.12.7
+  - htslib=1.20

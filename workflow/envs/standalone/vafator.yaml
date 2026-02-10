@@ -1,0 +1,7 @@
+name: vafator
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - vafator=2.2.0
