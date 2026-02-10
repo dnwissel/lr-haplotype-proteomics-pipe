@@ -17,8 +17,6 @@ rule prepare_unify_references:
 rule prepare_install_bambu:
     output:
         "results/prepare/install_bambu/done.txt",
-    params:
-        version=config["bambu_version"],
     log:
         "logs/prepare/install_bambu/out.log",
     conda:
