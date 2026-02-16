@@ -8,6 +8,8 @@ clair3_rna_version: "v0.2.2"
 
 call_variants_clair3_rna_mapping:
   pb_iso_seq: "hifi_sequel2_minimap2"
-  pb_mas_seq: "hifi_mas"
+  pb_kinnex: "hifi_mas_minimap2"
   ont_r9_cdna: "ont_r9_guppy_cdna"
-  ont_r9_drna: "ont_r9_guppy_drna"
+  ont_002_drna: "ont_guppy_drna002"
+  ont_r10_cdna: "ont_r10_dorado_cdna"
+  ont_004_drna: "ont_dorado_drna004"
